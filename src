@@ -1,0 +1,2 @@
+mkdir src
+echo "export {};" > src/dummy.ts
