@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: wallet-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WALLET_BACKEND_TOKEN
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: ALCHEMY_API_KEY
+        sync: false
+      - key: CRYPTOAPIS_API_KEY
+        sync: false
+      - key: TRONGRID_API_KEY
+        sync: false
+      - key: QUIDAX_API_KEY
+        sync: false
+      - key: QUIDAX_API_URL
+        value: https://www.quidax.com/api/v1
+      - key: ALCHEMY_WEBHOOK_SIGNING_KEY
+        sync: false
+      - key: CRYPTOAPIS_WEBHOOK_SECRET
+        sync: false
+      - key: QUIDAX_WEBHOOK_SECRET
+        sync: false
+      - key: NETWORK
+        value: mainnet
+      - key: ALLOWED_ORIGINS
+        sync: false
